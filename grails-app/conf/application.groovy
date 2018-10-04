@@ -1,4 +1,6 @@
-
+grails.plugin.springsecurity.auth.loginFormUrl = '/login'
+grails.plugin.springsecurity.logout.filterProcessesUrl="/logoff"
+grails.plugin.springsecurity.logout.afterLogoutUrl="/"
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'cms.User'
