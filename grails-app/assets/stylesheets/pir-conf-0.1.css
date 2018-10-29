@@ -1,0 +1,229 @@
+@import "pir-materialize-v1.0.css";
+
+header, main, footer {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+/* Logo */
+.logo {
+    max-width: 80%;
+    padding-top: 0px;
+    padding-bottom: 25px;
+    -webkit-filter: drop-shadow(0px 0px 10px #000000);
+    filter: drop-shadow(0px 0px 10px #000000);
+}
+
+.sidenav .user-view .background img {
+    position: relative;
+    left: -290px;
+    top: -90px;
+}
+
+.slider .slides .caption h2,
+.slider .slides .caption h3,
+.slider .slides .caption h4,
+.slider .slides .caption h5 {
+    text-shadow: 2px 2px #000000;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-thumb {
+    background: #a5a5a5;
+    border: 2px solid #f5f5f5;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #9b9b9b;
+    border: none;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #858585;
+    border: none;
+}
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border: 0px none #f5f5f5;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #f5f5f5;
+}
+::-webkit-scrollbar-track:active {
+    background: #f5f5f5;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.bordertest {
+    border: #ff3d00 solid 1px;
+}
+
+
+.avatarimg{
+    border-radius:50%;
+
+}
+
+.circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.circular--landscape img {
+    width: auto;
+    height: 100%;
+    transform: translate(-50%,0%);
+}
+
+/*
+.avatarimg{
+    position: relative;
+    max-width: 150px;
+    height:150px;
+    /*margin: 20px auto;*/
+/*
+    overflow: hidden;
+    border-radius:50%;
+
+}*/
+
+.avatarimg img {
+    height: 150px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.card .max-card-height {
+    height: 90px;
+    overflow: hidden;
+}
+
+.card .news-image {
+    position: relative;
+    max-width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card .news-image img {
+    display: block;
+    position: relative;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+
+.card .news-image .news-title {
+    font-size: 24px;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 24px;
+}
+
+/* INICIO BANNER SECCION MOSTRAR NOTICIA */
+.news-banner {
+    overflow: hidden;
+}
+
+.news-banner .news-banner-blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    background-color: #000;
+    opacity: .7;
+    position: relative;
+    height: 90px;
+    z-index: -1;
+}
+
+.news-banner .news-banner-title {
+    position: relative;
+    height: 90px;
+    padding: 20px;
+    color: #ffffff;
+    font-size: medium;
+    font-weight: 400;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.parallax-container {
+    height: 150px;
+}
+
+.slider .indicators .indicator-item {
+    background-color: #676767;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #6176b0;
+}
+@media only screen and (max-width: 992px) {
+    .news-banner {
+        height: 180px;
+    }
+    .news-banner .news-banner-blur {
+        top: -265px;
+    }
+    .news-banner .news-banner-title {
+        top: -360px;
+        font-size: 20px;
+        line-height: 1.5em;
+    }
+    .news-banner img{
+        /*height: 100%;*/
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -2;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .news-banner {
+        height: 255px;
+    }
+    .news-banner .news-banner-blur {
+        top: -215px;
+    }
+    .news-banner .news-banner-title {
+        top: -320px;
+        font-size: 30px;
+        line-height: 1.2em;
+    }
+    .news-banner img{
+        display: block;
+        position: relative;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -2;
+    }
+}

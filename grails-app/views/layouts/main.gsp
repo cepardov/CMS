@@ -1,50 +1,86 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>
-        <g:layoutTitle default="Grails"/>
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8" />
+    <title><g:layoutTitle default="PIR Programa Informática Rural"/></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <asset:stylesheet src="pir-conf-0.1.css" media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
-
-    <asset:stylesheet src="application.css"/>
-
     <g:layoutHead/>
 </head>
-<body>
 
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/#">
-		    <asset:image src="grails.svg" alt="Grails Logo"/>
-                </a>
+<body class="grey lighten-2">
+<header>
+    <!--
+    <nav class="z-depth-4 blue-grey lighten-1">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
+        </div>
+    </nav>
+    -->
+
+
+    <ul id="slide-out" class="sidenav sidenav-fixed blue-grey darken-2">
+        <div class="user-view z-depth-3">
+            <div class="background">
+                <asset:image src="it.jpg"/>
             </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
+            <div class=" logoc center">
+                <a href="${createLink(uri:'/')}"><asset:image class="logo" src="pir-logo-v2.png"/></a>
             </div>
         </div>
-    </div>
-
+        <li><a class="white-text" href="${createLink(uri:'/')}">Programa Informática Rural</a></li>
+        <li><g:link class="white-text" controller="news" action="index">Noticias PIR</g:link></li>
+    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
+        <g:if test="${c.name != "Login" && c.name != "Logout" && c.name != "Role" && c.name != "User" && c.name != "UserRole"}">
+            <li><g:link class="white-text" controller="${c.logicalPropertyName}">${c.name}</g:link></li>
+        </g:if>
+    </g:each>
+    </ul>
+    <!--
+    <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-med-and-up"><i class="material-icons">menu</i></a>
+    -->
     <g:layoutBody/>
+</header>
 
-    <div class="footer" role="contentinfo"></div>
+<g:if test="${controllerName != "news"}">
+    <footer class="page-footer blue-grey darken-2">
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright Programa Informática Rural
+                <a class="grey-text right" href="#!">@cepardov</a>
+            </div>
+        </div>
+    </footer>
+</g:if>
 
-    <div id="spinner" class="spinner" style="display:none;">
-        <g:message code="spinner.alt" default="Loading&hellip;"/>
-    </div>
-
-    <asset:javascript src="application.js"/>
-
+<asset:javascript src="pir-jquery-3.3.1.min.js"/>
+<asset:javascript src="materialize.min.js"/>
+<asset:javascript src="pir-conf-v0.1.js"/>
 </body>
 </html>
