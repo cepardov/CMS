@@ -37,11 +37,7 @@
         </div>
         <li><a class="white-text" href="${createLink(uri:'/')}">Programa Informática Rural</a></li>
         <li><g:link class="white-text" controller="news" action="index">Noticias PIR</g:link></li>
-    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
-        <g:if test="${c.name != "Login" && c.name != "Logout" && c.name != "Role" && c.name != "User" && c.name != "UserRole"}">
-            <li><g:link class="white-text" controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-        </g:if>
-    </g:each>
+        <li><g:link class="white-text" controller="user" action="index">Usuarios</g:link></li>
     </ul>
     <!--
     <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-med-and-up"><i class="material-icons">menu</i></a>
@@ -49,7 +45,7 @@
     <g:layoutBody/>
 </header>
 
-<g:if test="${controllerName != "news"}">
+<g:if test="${controllerName != "news" && controllerName != "user"}">
     <footer class="page-footer blue-grey darken-2">
         <!--
         <div class="container">
@@ -73,7 +69,7 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2018 Copyright Programa Informática Rural
-                <a class="grey-text right" href="#!">@cepardov</a>
+                <span class="grey-text right">V0.2.2018 - <a class="grey-text" href="#!">@cepardov</a></span>
             </div>
         </div>
     </footer>
@@ -82,5 +78,21 @@
 <asset:javascript src="pir-jquery-3.3.1.min.js"/>
 <asset:javascript src="materialize.min.js"/>
 <asset:javascript src="pir-conf-v0.1.js"/>
+
+<g:if test="${flash.message}">
+    <script>
+        window.onload=function(){M.toast({html: '${flash.message}'});}
+    </script>
+</g:if>
+<!-- Generic Modals -->
+<g:if test="${actionName == 'index'}">
+    <g:if test="${params.id}">
+        <script>
+            $(document).ready(function(){
+                $('#modalEdicion').modal('open');
+            });
+        </script>
+    </g:if>
+</g:if>
 </body>
 </html>

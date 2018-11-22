@@ -7,6 +7,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'cms.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'cms.UserRole'
 grails.plugin.springsecurity.authority.className = 'cms.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+    [pattern: '/dbconsole/**',	 access: ['ROLE_ADMIN']],
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],

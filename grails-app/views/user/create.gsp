@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main.gsp.bak" />
+        <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
@@ -25,13 +25,9 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.user}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="user"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
+
+            <g:form action="save">
+                <f:input property="nombre" id="nombre" bean="user"/>
             </g:form>
         </div>
     </body>
